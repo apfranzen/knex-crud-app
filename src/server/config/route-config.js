@@ -6,9 +6,11 @@
 
     // *** routes *** //
     const routes = require('../routes/index');
+    const albums = require('../routes/albums');
 
     // *** register routes *** //
     app.use('/', routes);
+    app.use('/albums', albums);
 
   };
 
