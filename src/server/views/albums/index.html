@@ -8,4 +8,33 @@
 
   <a href="/albums/new">New Album</a>
 
+  <table class="table table-responsive table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Genre</th>
+            <th>Stars</th>
+            <th class="text-center">Explicit Lyrics</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for album in albums -%}
+          <tr>
+            <td>{{ album.id }}</td>
+            <td>{{ album.artist }}</td>
+            <td>{{ album.name }}</td>
+            <td>{{ album.genre }}</td>
+            <td>{{ album.stars }}</td>
+            {% if album.explicit %}
+            <td class="text-center text-danger"><span class="glyphicon glyphicon-warning-sign"></span></td>
+            {% else %}
+            <td></td>
+            {% endif %}
+          </tr>
+        {%- endfor %}
+        </tbody>
+      </table>
+
 {% endblock %}
